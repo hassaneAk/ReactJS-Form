@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-export class FormPersonalDetails extends Component {
+export class FormMoreDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -20,28 +20,13 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="adresses" />
+          <AppBar title="Informations Contact" />
           <TextField
-            hintText="Pays"
-            floatingLabelText="pays"
-            onChange={handleChange('pays')}
-            defaultValue={values.pays}
+            hintText="Nom"
+            floatingLabelText="Nom"
+            onChange={handleChange('Nom')}
+            defaultValue={values.Nom}
           />
-          
-          <TextField
-            hintText="ville"
-            floatingLabelText="ville"
-            onChange={handleChange('ville')}
-            defaultValue={values.ville}
-          />
-          <br />
-          <TextField
-            hintText="adresse"
-            floatingLabelText="adresse"
-            onChange={handleChange('adresse')}
-            defaultValue={values.adresse}
-          />
-          <br />
           <RaisedButton
             label="Continue"
             primary={true}
@@ -54,6 +39,7 @@ export class FormPersonalDetails extends Component {
             style={styles.button}
             onClick={this.back}
           />
+         
         </React.Fragment>
       </MuiThemeProvider>
     );
@@ -66,4 +52,4 @@ const styles = {
   }
 };
 
-export default FormPersonalDetails;
+export default FormMoreDetails;

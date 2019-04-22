@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
+import FormMoreDetails from './FormMoreDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 
@@ -39,8 +40,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { raisonSociale, nomUsuel,  tailleEntreprise, denominationCommerciale, marchePrincipal, paysNationalite, dateCreation,pays,ville,adresse} = this.state;
-    const values = { raisonSociale,nomUsuel,  tailleEntreprise, denominationCommerciale, marchePrincipal, paysNationalite, dateCreation,pays,ville,adresse };
+    const { raisonSociale, nomUsuel,  tailleEntreprise, denominationCommerciale, marchePrincipal, paysNationalite, dateCreation,pays,ville,adresse,nom} = this.state;
+    const values = { raisonSociale,nomUsuel,  tailleEntreprise, denominationCommerciale, marchePrincipal, paysNationalite, dateCreation,pays,ville,adresse ,nom};
 
     switch (step) {
       case 1:
@@ -60,7 +61,17 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 3:
+
+        case 3:
+        return (
+          <FormMoreDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 4:
         return (
           <Confirm
             nextStep={this.nextStep}
@@ -68,7 +79,7 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 4:
+      case 5:
         return <Success />;
     }
   }

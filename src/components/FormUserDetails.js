@@ -15,7 +15,7 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Informations" />
+          <AppBar title="Informations générales" />
           <TextField
             hintText="Raison sociale"
             floatingLabelText="Raison sociale"
